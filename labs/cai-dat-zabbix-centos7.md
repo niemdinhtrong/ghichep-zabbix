@@ -4,23 +4,24 @@
 
 Một mô hình giám sát zabbix sẽ bao gồm đầy đủ các thành phần như sau:
 
-![](/ghichep-zabbix/images/1.jpg)
+![](/ghichep-zabbix/images/cai-dat/1.jpg)
 
 Nhưng ở đây tôi giám sát với hệ thống nhỏ nên tôi sẽ không cài đặt zabbix proxy. Tôi và tôi cài đặt web server, Zabbix server và Database server trên cùng một máy.
 
 ## Chuẩn bị
 
 Một máy cài centOS 7 dùng làm zabbix server có cấu hình:
-    * 2 CPU
-    * 2G RAM
-    * 1 interface
-    * 15G disk
+
+ * 2 CPU
+ * 2G RAM
+ * 1 interface
+ * 15G disk
 
 Một máy làm zabbix agent nên ko yêu cầu phần cứng. Nhưng trong bài lab này tôi cài agent trên máy có HĐH centOS7.
 
 Mô hình đơn giản của tôi như sau
 
-![](/ghichep-zabbix/images/2.png)
+![](/ghichep-zabbix/images/cai-dat/2.png)
 
 ## Cài đặt
 
@@ -125,7 +126,7 @@ service httpd restart
 
 Bạn mở trình duyệt web và truy cập `http://IP-server/zabbix` bạn sẽ thấy như sau
 
-![](/ghichep-zabbix/images/3.png)
+![](/ghichep-zabbix/images/cai-dat/3.png)
 
 ## Cài đặt zabbix agent
 
