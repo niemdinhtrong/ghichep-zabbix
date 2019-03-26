@@ -33,9 +33,9 @@ Như vậy công thức để tính dung lượng disk cần thiết cho DB sẽ
 | Thông số | Dung lượng cần thiết |
 | -------- | -------------------- |
 | Zabbix configuration | Fixed size. Normally 10MB or less. |
-| History | days*(items/refresh rate)*24*3600*bytes     items : number of items     days : number of days to keep history refresh rate : average    refresh rate of items      bytes : number of bytes required to keep single value, depends on database engine, normally ~90 bytes.|
-| Trends | days*(items/3600)*24*3600*bytes  items : number of items days :  number of days to keep history  bytes : number of bytes required to keep single trend, depends on database engine, normally ~90 bytes. |
-| Events | days*events*24*3600*bytes    events : number of event per second.    One (1) event per second in worst case scenario.    days : number of days to keep history   bytes : number of bytes required to keep single trend, depends on database engine, normally ~170 bytes. |
+| History | days*(items/refresh rate)*24*3600*bytes;     items : number of items;     days : number of days to keep history; refresh rate : average    refresh rate of items;      bytes : number of bytes required to keep single value, depends on database engine, normally ~90 bytes.|
+| Trends | days*(items/3600)*24*3600*bytes;  items : number of items; days :  number of days to keep history;  bytes : number of bytes required to keep single trend, depends on database engine, normally ~90 bytes. |
+| Events | days*events*24*3600*bytes    events : number of event per second.    One (1) event per second in worst case scenario;    days : number of days to keep history;   bytes : number of bytes required to keep single trend, depends on database engine, normally ~170 bytes. |
 
 Như vậy tổng dung lượng cần thiết là 
 
