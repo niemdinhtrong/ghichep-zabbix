@@ -41,6 +41,7 @@ Bạn cần lưu lại chuỗi token này để khi báo khi gửi cảnh báo
 ```
 git clone https://github.com/eternnoir/pyTelegramBotAPI.git
 cd pyTelegramBotAPI
+yum install python-setuptools
 python setup.py install
 ```
 
