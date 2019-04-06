@@ -53,3 +53,15 @@ Với kiểu item này nó sẽ chấp nhận dữ liệu gửi đến thay vì 
 Để sử dụng một trapper item ta cần set up item kiểu trapper và dữ liệu được gửi đến từ host.
 
 Để nhận dữ liệu của kiểu item này ta dùng lệnh zabbix_sender từ host.
+
+**SSH checks**
+
+Với kiểu item này sẽ sử dụng check thông qua giao thức SSH. Zabbix server sẽ truy cập vào host thông qua giao thức SSH chạy những đoạn script trên host để lấy các thông số gửi về. 
+
+Với loại item này thì ta không cần cài zabbix-agent trên host mà ta chỉ cần ssh được lên host này.
+
+**Calculated items**
+
+Với kiểu check này cho phép ta sử dụng các item đã có để tính toán ra một thông số cần thiết để tiện cho việc giám sát.
+
+Ở đây sử dụng một số hàm và biểu thức để tính toán các giá trị.

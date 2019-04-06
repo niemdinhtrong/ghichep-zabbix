@@ -24,3 +24,7 @@ Vào `Monitoring` -> `Latest data` để thấy các thông tin do item vừa t�
 ![](/images/item-ssh/5.png)
 
 ![](/images/item-ssh/6.png)
+
+**Lưu ý**
+
+Để đảm bảo việc bảo mật thì trên host bạn nên tạo ra một user và chỉ cho phép user này sử dụng một số quyền cần thiết để lấy thông tin gửi về server. Điều này sẽ tránh được việc truy cập những dữ liệu quan trọng trên host.
