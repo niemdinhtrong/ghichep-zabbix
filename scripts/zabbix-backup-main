@@ -9,6 +9,3 @@ wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scrip
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/tables
 
 sudo chmod +x zabbix-backup
-
-./zabbix-backup
-
