@@ -25,7 +25,7 @@ Lúc này chúng ta phải tiến hành cài đặt một zabbix server mới. �
 
 Lưu ý: Ở bước import DB ta không thực hiện câu lệnh này
 
-![]()
+![](/images/Backup-restore/1.png)
 
 mà ta sử dụng file đã backup gần nhất để import dữ liệu vào
 
@@ -42,9 +42,48 @@ Khi tạo xong và truy cập vào ta sẽ thấy được nó có cấu hình g
 
 Khi cấu hình xong ta có thể thấy nó nhận được các metric đẩy về. Ta sẽ thấy nó giống với cấu hình của trên máy cũ và sẽ có đầy các dữ liệu trước đó. Nó sẽ chỉ bị mất dữ liệu trong khoảng thời gian từ lúc zabbix server bị lỗi đến lúc ta triển khai xong hệ thống mới.
 
-**Chỉ backup cấu hình**
+## Chỉ backup cấu hình
 
 Với cách backup này ta sẽ chỉ backup cấu hình trên zabbix server chứ không backup dữ liệu là các metric được gửi về được lưu trữ trong DB.
 
 Theo cách này thì ta sẽ giữ được cấu hình và giao diện trên zabbix server. Và sẽ tốn ít tài nguyên cũng như thời gian backup và restore nhanh hơn rất nhiều so với kiểu backup full như bên trên (nếu thực hiện với DB lớn thì bạn sẽ thấy rõ sự khác biệt này. Còn với hệ thống nhỏ thì thời gian chên lệch sẽ không nhiều)
 
+### Để backup cấu hình thực hiện như sau
+
+Chạy các lệnh sau trên zabbix server cần backup
+
+Download script 
+
+```
+wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup-main
+```
+
+Thực hiện backup
+
+```
+./zabbix-backup
+```
+
+Để mở các file backup ta vào thư mục `zabbix-backup-file`
+
+Các file backup này có tên định dạng `zabbix-năm-tháng-ngày-giờ-phút-giây.sql`
+
+Thời gian bên trên tương ứng với thời gian chạy script. Bạn nên lưu các file này sang nơi khác đề phòng rủi ro.
+
+Khi hệ thống bị lỗi cần cài lại zabbix server. Để cài zabbix server tham khảo [tại đây](https://github.com/niemdinhtrong/ghichep-zabbix/blob/master/labs/cai-dat-zabbix-centos7.md)
+
+Chú ý đến bước 
+
+![](/images/Backup-restore/2.png)
+
+Sau khi chạy lệnh bên trên ta chạy thêm lệnh sau
+
+```
+mysql -u zabbix -p zabbix < file-backup.sql
+```
+
+`file-backup.sql` là file backup đã backup ở trên zabbix server cũ và đã chuyển sang server này. Chú ý cần chỉ ra đường dẫn đến file này.
+
+Tiếp tục thực hiện các thao tác tiếp theo để cài đặt zabbix server. Chú ý đổi lại địa chỉ IP theo IP của zabbix server cũ.
+
+Với cách này sẽ lấy lại được toàn bộ cấu hình của zabbix server nhưng ko có bất kỳ dữ liệu metric trước đây.
