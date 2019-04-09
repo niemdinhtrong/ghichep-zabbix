@@ -58,9 +58,13 @@ Download script
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup-main
 ```
 
-Thực hiện backup
-
 ```
+chmod +x zabbix-backup-main
+
+./zabbix-backup-main
+
+cd zabbix
+
 ./zabbix-backup
 ```
 
