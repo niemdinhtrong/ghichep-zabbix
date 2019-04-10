@@ -50,9 +50,7 @@ Theo cách này thì ta sẽ giữ được cấu hình và giao diện trên za
 
 ### Để backup cấu hình thực hiện như sau
 
-Chạy các lệnh sau trên zabbix server cần backup
-
-Download script 
+**Cài đặt lần đầu**
 
 ```
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup-main
@@ -62,9 +60,21 @@ wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scrip
 chmod +x zabbix-backup-main
 
 ./zabbix-backup-main
+```
 
+**Backup**
+
+Để tiến hành backup thực hiện như sau
+
+Truy cập vào thư mục chứa script
+
+```
 cd zabbix
+```
 
+Chạy script để backup
+
+```
 ./zabbix-backup
 ```
 
