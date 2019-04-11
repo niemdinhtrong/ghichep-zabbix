@@ -5,7 +5,7 @@ Logfile="/root/zabbix/zabbix-backup.log"
 Backupfile="/root/zabbix/backup-file"
 if ( yum list installed | grep -q mysql )
     then
-        yum install wget
+        yum install mysql
     else
         echo ========================================================================================
     fi
