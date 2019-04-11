@@ -6,9 +6,9 @@ Backupfile="/root/zabbix/backup-file"
 TABLE=`cat $PATH/tables.txt`
 if ( yum list installed | grep -q mysql )
     then
-        echo ======================================================================================================
-    else
         yum install wget
+    else
+        echo =======================================================================================
     fi
 cd
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/tables.txt

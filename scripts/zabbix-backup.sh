@@ -11,7 +11,7 @@ PATH_DIR="/root/zabbix"
 Logfile="/root/zabbix/zabbix-backup.log"
 Backupfile="/root/zabbix/backup-file"
 TABLE=`cat $PATH_DIR/tables.txt`
-mysqldump -u ${USER_NAME} -h ${DBHOST} -P ${DBPORT} -p${DBPASSWORD} ${DBNAME} ${TABLE} > $PATH_DIR/zabbix-`date +"%Y-%m-%d-%H-%M-%S"`.sql
+mysqldump -u ${USER_NAME} -h ${DBHOST} -P ${DBPORT} -p${DBPASSWORD} ${DBNAME} ${TABLE} > $Backupfile/zabbix-`date +"%Y-%m-%d-%H-%M-%S"`.sql
 [ "$?" == 0 ] && echo "zabbix-`date +"%Y-%m-%d-%H-%M-%S"`: Backup zabbix succeed"     >> ${Logfile}
 [ "$?" != 0 ] && echo "zabbix-`date +"%Y-%m-%d-%H-%M-%S"`: Backup zabbix not succeed" >> ${Logfile}
 cd ${Backupfile}
