@@ -7,7 +7,7 @@ if ( yum list installed | grep -q mysql )
     then
         yum install wget
     else
-        echo =======================================================================================
+        echo ========================================================================================
     fi
 cd
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/tables.txt
