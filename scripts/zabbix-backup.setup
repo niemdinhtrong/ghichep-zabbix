@@ -11,7 +11,7 @@ if ( yum list installed | grep -q mysql )
     fi
 cd
 wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/tables.txt
-https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup.sh
+wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup.sh
 chmod +x zabbix-backup.sh
 mkdir $PATH_DIR
 touch $Logfile
